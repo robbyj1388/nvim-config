@@ -33,12 +33,23 @@ return require('packer').startup(function(use)
   -- Treesitter for better syntax highlighting and code understanding
   use 'nvim-treesitter/nvim-treesitter'
 
+  -- Auto Completion (IDE like)
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  -- Snippet for auto Completion
+  use 'L3MON4D3/LuaSnip'
+  
+  use 'saadparwaiz1/cmp_luasnip'
+  use "rafamadriz/friendly-snippets"
+
   -- LSP Server plugin
   use {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
   }
+
 
   -- Telescope for fuzzy file searching, text searching, and other tasks
   -- It depends on the plenary.nvim plugin to function correctly

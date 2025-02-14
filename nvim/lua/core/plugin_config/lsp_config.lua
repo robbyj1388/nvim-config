@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
     "lua_ls",        -- Lua Language Server
     "pyright",       -- Python LSP
     "clangd",        -- C LSP
-    "tsserver",      -- TypeScript LSP
+    "ts_ls",         -- TypeScript LSP (replaces deprecated tsserver)
     "html",          -- HTML LSP
     "cssls",         -- CSS LSP
     "jdtls",         -- Java LSP
@@ -26,9 +26,12 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })  -- Hover to show documentation
 end
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 -- Setup the lua_ls LSP configuration
 require("lspconfig").lua_ls.setup {
-  on_attach = on_attach,  -- Attach the on_attach function
+  on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -58,8 +61,8 @@ require("lspconfig").clangd.setup {
   on_attach = on_attach,
 }
 
--- Setup the tsserver (TypeScript) LSP configuration
-require("lspconfig").tsserver.setup {
+-- Setup the ts_ls (TypeScript) LSP configuration (Updated)
+require("lspconfig").ts_ls.setup {
   on_attach = on_attach,
 }
 
