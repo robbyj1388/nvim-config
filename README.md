@@ -24,4 +24,4 @@ To use this configuration, follow these steps:
 Clone this repository into your local machine:
 
 ```bash
-git clone https://github.com/your-username/nvim-config.git ~/.config/nvim
+git clone https://github.com/robbyj1388/nvim-config.git ~/.config/nvim
