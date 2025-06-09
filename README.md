@@ -1,6 +1,8 @@
 # Personal Neovim Configuration
 
-Welcome to my personal Neovim configuration repository! This is a collection of customizations, plugins, and key mappings I use for an optimized and efficient coding experience.
+This is my old personal Neovim configuration due to it being outdated, I now use NvChad as my personal config! 
+
+This is a collection of customizations, plugins, and key mappings I used for an optimized and efficient coding experience.
 
 Feel free to explore, fork, and adapt this setup to your needs. Contributions and suggestions are welcome!
 
