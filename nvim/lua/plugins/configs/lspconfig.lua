@@ -1,67 +1,53 @@
-dofile(vim.g.base46_cache .. "lsp")
-require "nvchad.lsp"
-
-local M = {}
-local utils = require "core.utils"
-
--- export on_attach & capabilities for custom lspconfigs
-M.on_attach = function(client, bufnr)
-  utils.load_mappings("lspconfig", { buffer = bufnr })
-
-  if client.server_capabilities.signatureHelpProvider then
-    require("nvchad.signature").setup(client)
-  end
-end
-
--- disable semantic tokens
-M.on_init = function(client, _)
-  if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
-    client.server_capabilities.semanticTokensProvider = nil
-  end
-end
-
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-
-M.capabilities.textDocument.completion.completionItem = {
-  documentationFormat = { "markdown", "plaintext" },
-  snippetSupport = true,
-  preselectSupport = true,
-  insertReplaceSupport = true,
-  labelDetailsSupport = true,
-  deprecatedSupport = true,
-  commitCharactersSupport = true,
-  tagSupport = { valueSet = { 1 } },
-  resolveSupport = {
-    properties = {
-      "documentation",
-      "detail",
-      "additionalTextEdits",
-    },
-  },
-}
-
-require("lspconfig").lua_ls.setup {
-  on_init = M.on_init,
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = {
-          [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-          [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-          [vim.fn.stdpath "data" .. "/lazy/ui/nvchad_types"] = true,
-          [vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy"] = true,
-        },
-        maxPreload = 100000,
-        preloadFileSize = 10000,
-      },
-    },
-  },
-}
-
-return M
+-- Commented out because its depreciated
+--
+--
+--
+--
+--
+---- ~/.config/nvim/lua/plugins/configs/lspconfig.lua
+--
+---- Import the new LSP framework
+--local lspconfig = vim.lsp.config
+--
+---- Common capabilities and on_attach
+--local capabilities = vim.lsp.protocol.make_client_capabilities()
+--local on_attach = function(client, bufnr)
+--  -- Example keymaps
+--  local opts = { buffer = bufnr, noremap = true, silent = true }
+--  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+--  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+--  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+--end
+--
+---- Rust
+--lspconfig.rust_analyzer.setup({
+--  on_attach = on_attach,
+--  capabilities = capabilities,
+--  filetypes = { "rust" },
+--  root_dir = vim.fs.dirname(vim.fs.find({ "Cargo.toml" }, { upward = true })[1]),
+--  settings = {
+--    ["rust-analyzer"] = {
+--      cargo = { allFeatures = true },
+--      checkOnSave = { command = "clippy" },
+--    },
+--  },
+--})
+--
+---- Lua
+--lspconfig.lua_ls.setup({
+--  on_attach = on_attach,
+--  capabilities = capabilities,
+--  settings = {
+--    Lua = {
+--      diagnostics = { globals = { "vim" } },
+--      workspace = { checkThirdParty = false },
+--    },
+--  },
+--})
+--
+---- Python
+--lspconfig.pyright.setup({
+--  on_attach = on_attach,
+--  capabilities = capabilities,
+--})
+--
