@@ -21,6 +21,11 @@ opt.shiftwidth = 2
 opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
+-- Scrolling 
+opt.wrap = false
+opt.sidescroll = 1
+-- Start scrolling when the cursor is 8 columns away from the edge
+opt.sidescrolloff = 8
 
 opt.fillchars = { eob = " " }
 opt.ignorecase = true
