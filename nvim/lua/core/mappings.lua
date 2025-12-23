@@ -68,6 +68,10 @@ M.general = {
   },
 }
 
+-- Keep selection when indenting in visual mode
+vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
+vim.keymap.set("v", "<", "<gv", { desc = "Outdent and keep selection" })
+
 -- add empty tables for the other sections NVChad expects
 M.nvimtree = {}
 M.telescope = {}
