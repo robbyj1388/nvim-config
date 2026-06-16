@@ -1,6 +1,6 @@
-# Personal Neovim Configuration
+# Personal Neovim and Tmux Configuration
 
-This is my old personal Neovim configuration due to it being outdated, I now use NvChad as my personal config! 
+This is my personal Neovim and Tmux configuration files
 
 This is a collection of customizations, plugins, and key mappings I used for an optimized and efficient coding experience.
 
@@ -16,5 +16,5 @@ Feel free to explore, fork, and adapt this setup to your needs. Contributions an
   - LSP configuration for auto-completion, diagnostics, and more
   - And many others for improved editing experience
 - **Personalized Theme**: Use of a dark theme that is easy on the eyes, along with a custom status line for better context.
-
+  **Super Key for Tmux has been changed to ```ctrl + a```.
 
