@@ -17,13 +17,4 @@ Feel free to explore, fork, and adapt this setup to your needs. Contributions an
   - And many others for improved editing experience
 - **Personalized Theme**: Use of a dark theme that is easy on the eyes, along with a custom status line for better context.
 
-## Setup
 
-To use this configuration, follow these steps:
-
-### 1. Clone the repository
-
-Clone this repository into your local machine:
-
-```bash
-git clone https://github.com/robbyj1388/nvim-config.git ~/.config/nvim
